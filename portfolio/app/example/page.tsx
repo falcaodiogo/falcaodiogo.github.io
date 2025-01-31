@@ -21,7 +21,7 @@ interface AnimatedCardProps extends CardProps {
 }
 
 const AnimatedCard = ({ children, className = "", initial, animate, transition }: AnimatedCardProps) => (
-  <motion.div initial={initial} animate={animate} transition={transition} className={`bg-gray-800 text-white p-6 rounded-2xl shadow-lg ${className}`}>
+  <motion.div initial={initial} animate={animate} transition={transition} className={`bg-primary text-white p-6 rounded-2xl shadow-lg ${className}`}>
     {children}
   </motion.div>
 );
@@ -58,9 +58,9 @@ export default function Page() {
         </AnimatedCard>
 
         <AnimatedCard 
-          initial={{ scaleX: 0, scaleY: 0, originX: 1, originY: 0 }}
-          animate={{ scaleX: 1, scaleY: 1 }}
-          transition={{ duration: 0.2, ease: "easeOut", delay: 1.7 }}
+          initial={{ scaleY: 0, originY: 0 }}
+          animate={{ scaleY: 1 }}
+          transition={{ duration: 0.2, ease: "easeOut", delay: 1.8 }}
           className="col-span-4"
         >
           4
@@ -69,7 +69,7 @@ export default function Page() {
         <AnimatedCard 
           initial={{ scaleY: 0, originY: 0 }}
           animate={{ scaleY: 1 }}
-          transition={{ duration: 0.2, ease: "easeOut", delay: 1.8 }}
+          transition={{ duration: 0.2, ease: "easeOut", delay: 1.7 }}
           className="col-span-4"
         >
           5
