@@ -3,6 +3,7 @@
 // import TextPressure from "../components/textPressure";
 
 import { ReactNode } from "react";
+import { motion } from "motion/react";
 
 interface CardProps {
   children: ReactNode;
@@ -27,7 +28,23 @@ export default function Page() {
       <div className="md:col-span-2 grid grid-cols-8 gap-8 row-span-6">
         <Card className="bg-gray-800 col-span-5">2</Card>
 
-        <Card className="flex bg-gray-800 col-span-3">3</Card>
+        <motion.div
+          initial={{ x: 0, y: 0 }}
+          animate={{
+            x: ["-30%", "-30%", "0%"],
+            y: ["30%", "30%", "0%"],
+            scale: [1.5, 1, 1],
+          }}
+          transition={{
+            times: [0, 0.5, 1],
+            duration: 1.5,
+            delay: 0.5,
+            velocity: 10
+          }}
+          className="bg-gray-800 col-span-3 text-white p-6 rounded-2xl shadow-lg"
+        >
+          3
+        </motion.div>
 
         <Card className="bg-gray-800 col-span-4">4</Card>
 
