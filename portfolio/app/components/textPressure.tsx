@@ -92,9 +92,9 @@ const TextPressure: React.FC<TextPressureProps> = ({
       containerRef.current.getBoundingClientRect();
 
     let newFontSize = containerW / (chars.length / 2);
-    newFontSize = Math.max(newFontSize, minFontSize);
-
+    newFontSize = Math.min(newFontSize, 40);
     setFontSize(newFontSize);
+
     setScaleY(1);
     setLineHeight(1);
 
@@ -146,8 +146,8 @@ const TextPressure: React.FC<TextPressureProps> = ({
             return Math.max(minVal, val + minVal);
           };
 
-          const wdth = width ? Math.floor(getAttr(d, 5, 200)) : 100;
-          const wght = weight ? Math.floor(getAttr(d, 100, 900)) : 400;
+          const wdth = width ? Math.floor(getAttr(d, 100, 400)) : 100;
+          const wght = weight ? Math.floor(getAttr(d, 200, 1200)) : 400;
           const italVal = italic ? getAttr(d, 0, 1).toFixed(2) : "0";
           const alphaVal = alpha ? getAttr(d, 0, 1).toFixed(2) : "1";
 
@@ -202,7 +202,7 @@ const TextPressure: React.FC<TextPressureProps> = ({
           transform: `scale(1, ${scaleY})`,
           transformOrigin: "center top",
           margin: 0,
-          fontWeight: 100,
+          fontWeight: 50,
           color: stroke ? undefined : textColor,
         }}
       >
