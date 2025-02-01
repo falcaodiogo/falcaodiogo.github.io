@@ -1,3 +1,4 @@
+import { Crimson_Pro } from "next/font/google";
 import type { Config } from "tailwindcss";
 
 export default {
@@ -11,7 +12,18 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        primary: "var(--primary)"
+        primary: "var(--primary)",
+        secondary: "var(--secondary)",
+        terciary: "var(--terciary)",
+        surface: "var(--surface)",
+        variant: "var(--variant)",
+      },
+      fontFamily: {
+        sans: ["var(--font-opensans)"],
+        mono: ["var(--font-roboto-mono)"],
+        inter: ["var(--font-inter)"],
+        archivo: ["var(--font-archivo)"],
+        crimson: ["var(--font-crimson-pro)"]
       },
     },
   },
