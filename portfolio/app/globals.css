@@ -9,7 +9,7 @@
   --secondary: #c1bc9b;
   --terciary: #26291a;
   --surface: #bbafa5;
-  --variant: #cccccc;
+  --variant: #a3af6f;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,7 +20,7 @@
     --secondary: #a09258;
     --terciary: #3a3d27;
     --surface: #5a4234;
-    --variant: #b0afbd;
+    --variant: #3a3d27;
   }
 }
 
