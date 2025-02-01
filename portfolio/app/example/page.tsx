@@ -15,7 +15,7 @@ export default function Page() {
       >
         <h1 className="font-archivo font-extrabold text-foreground text-2xl md:text-3xl text-center flex items-center justify-center h-full">
           Diogo's Website Portfolio
-          
+  
         </h1>
       </AnimatedCard>
 
