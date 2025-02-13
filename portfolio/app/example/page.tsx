@@ -34,7 +34,7 @@ export default function Page() {
           <motion.h1
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 2.3 }}
+            transition={{ duration: 0.1, delay: 2.3 }}
             className="font-sans font-extrabold text-foreground text-6xl"
           >
             University Projects
@@ -43,7 +43,7 @@ export default function Page() {
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 2.1 }}
+            transition={{ duration: 0.2, delay: 2.1 }}
             className="text-foreground font-semibold md:text-base pt-6 pb-4"
           >
             Explore a collection of academic projects made at Universidade de
@@ -54,6 +54,10 @@ export default function Page() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 2.2 }}
+            whileHover={{
+              backgroundColor: "var(--secondary)",
+              transition: { duration: 0.1, delay: 0 },
+            }}
             className="bg-variant text-foreground font-semibold p-4 rounded-xl transition-colors duration-300 w-1/3 self-start"
           >
             Explore
@@ -94,7 +98,7 @@ export default function Page() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 2 }}
-              className="font-sans font-extrabold text-foreground text-lg p-8"
+              className="font-sans font-bold text-foreground text-lg p-8"
             >
               Hello! I'm Diogo Falcão, a Software Engineer at the University of
               Aveiro. I'm 21 years old and in the final year of my Computer
@@ -119,8 +123,8 @@ export default function Page() {
             Digital Skills
           </motion.h1>
 
-          <div className="flex flex-wrap gap-4 justify-center">
-            <div className="bg-primary p-4 rounded-xl">
+          <div className="flex flex-wrap gap-4 ps-8">
+            <div className="bg-primary p-4 rounded-xl transition hover:bg-surface">
               <motion.h1
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -130,7 +134,7 @@ export default function Page() {
                 Kotlin
               </motion.h1>
             </div>
-            <div className="bg-primary p-4 rounded-xl">
+            <div className="bg-primary p-4 rounded-xl transition hover:bg-surface">
               <motion.h1
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -140,27 +144,37 @@ export default function Page() {
                 Flutter
               </motion.h1>
             </div>
-            <div className="bg-primary p-4 rounded-xl">
+            <div className="bg-primary p-4 rounded-xl transition hover:bg-surface">
               <motion.h1
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 2.1 }}
                 className="text-foreground font-semibold"
               >
-                Java
+                TypeScript
               </motion.h1>
             </div>
-            <div className="bg-primary p-4 rounded-xl">
+            <div className="bg-primary p-4 rounded-xl transition hover:bg-surface">
               <motion.h1
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 2.3 }}
                 className="text-foreground font-semibold"
               >
-                TypeScript
+                Java
               </motion.h1>
             </div>
-            <div className="bg-primary p-4 rounded-xl">
+            <div className="bg-primary p-4 rounded-xl transition hover:bg-surface">
+              <motion.h1
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 2.3 }}
+                className="text-foreground font-semibold"
+              >
+                C#
+              </motion.h1>
+            </div>
+            <div className="bg-primary p-4 rounded-xl transition hover:bg-surface">
               <motion.h1
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -170,14 +184,14 @@ export default function Page() {
                 React Native
               </motion.h1>
             </div>
-            <div className="bg-primary p-4 rounded-xl">
+            <div className="bg-primary p-4 rounded-xl transition hover:bg-surface">
               <motion.h1
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 2.1 }}
                 className="text-foreground font-semibold"
               >
-                Figma
+                More
               </motion.h1>
             </div>
           </div>
@@ -189,7 +203,7 @@ export default function Page() {
           initial={{ scaleX: 0, originX: 0 }}
           animate={{ scaleX: 1 }}
           transition={{ duration: 0.2, ease: "easeOut", delay: 1.8 }}
-          className="bg-secondary row-span-2 p-14 flex flex-col justify-around"
+          className="bg-secondary row-span-2 p-14 flex flex-col justify-between"
         >
           <motion.h1
             initial={{ opacity: 0 }}
@@ -215,7 +229,11 @@ export default function Page() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 2.1 }}
-            className="bg-variant text-foreground font-semibold p-4 rounded-xl transition-colors duration-300 w-1/3 self-start"
+            whileHover={{
+              backgroundColor: "var(--primary)",
+              transition: { duration: 0.1, delay: 0 },
+            }}
+            className="bg-surface text-foreground font-semibold p-4 rounded-xl transition-colors duration-300 w-1/3 self-start"
           >
             See More
           </motion.button>
@@ -228,28 +246,28 @@ export default function Page() {
           className="bg-primary row-span-2 p-6"
         >
           <ul className="list-none">
-            <li className="text-foreground font-semibold md:text-base pt-4 p-8">
-              <div className="flex gap-4 items-center justify-center">
+            <li className="text-foreground font-semibold md:text-base p-8">
+              <div className="flex gap-4 items-center justify-between">
                 <a
                   href="https://github.com/falcaodiogo"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  GitHub Profile
+                  GitHub
                 </a>
                 <a
                   href="https://www.linkedin.com/in/diogofalcao2/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  LinkedIn Profile
+                  LinkedIn
                 </a>
                 <a
                   href="mailto:falcao.diogo@ua.pt"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Email Me
+                  Contact
                 </a>
               </div>
             </li>
