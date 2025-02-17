@@ -185,7 +185,9 @@ export default function Page() {
             }}
             className="bg-surface text-foreground font-semibold p-4 rounded-xl transition-colors duration-300 w-1/3 self-start"
           >
-            See More
+            <Link href="/personal">
+              <h1>See More</h1>
+            </Link>
           </motion.button>
         </AnimatedCard>
 
