@@ -168,7 +168,7 @@ export default function Page() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ type: "spring", duration: 0.6, delay: 2.3 }}
-            className="text-foreground font-semibold md:text-base pt-6 sm:pb-8"
+            className="text-foreground font-semibold md:text-base pt-6 pb-8 sm:pb-8"
           >
             Here you can find a growing collection of personal projects I've
             been working on during my free time. It's small right now, but hey,
