@@ -6,7 +6,6 @@ import Image from "next/image";
 import Link from "next/link";
 import AnimatedCard from "./components/animatedCard";
 import { motion } from "framer-motion";
-import { spring } from "motion";
 
 export default function Page() {
   return (
