@@ -88,7 +88,7 @@ export default function digitalSkills() {
             transition={{ duration: 0.5, delay: 2.1 }}
             className="text-foreground font-semibold"
           >
-            More
+            ...
           </motion.h1>
         </div>
       </div>
