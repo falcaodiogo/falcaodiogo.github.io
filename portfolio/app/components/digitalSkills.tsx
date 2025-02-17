@@ -20,7 +20,7 @@ export default function digitalSkills() {
         Digital Skills
       </motion.h1>
 
-      <div className="flex flex-wrap gap-4 ps-8">
+      <div className="flex flex-wrap gap-4 ps-8 sm:pb-8">
         <div className="bg-primary p-4 rounded-xl transition hover:bg-surface">
           <motion.h1
             initial={{ opacity: 0 }}
