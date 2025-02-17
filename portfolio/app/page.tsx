@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import AnimatedCard from "./components/animatedCard";
 import { motion } from "framer-motion";
+import { spring } from "motion";
 
 export default function Page() {
   return (
@@ -13,13 +14,18 @@ export default function Page() {
       <AnimatedCard
         initial={{ opacity: 0, scaleY: 0, originY: 1 }}
         animate={{ opacity: 1, scaleY: 1 }}
-        transition={{ duration: 0.2, ease: "easeOut", delay: 1.7 }}
+        transition={{ duration: 0.4, ease: "easeOut", delay: 1.7 }}
         className="bg-primary md:col-span-3 p-6"
       >
         <motion.h1
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 2 }}
+          transition={{
+            type: "spring",
+
+            duration: 0.5,
+            delay: 2,
+          }}
           className="font-archivo font-bold text-foreground text-2xl md:text-3xl text-center flex items-center justify-center h-full"
         >
           Made by Diogo
@@ -30,13 +36,22 @@ export default function Page() {
         <AnimatedCard
           initial={{ scaleX: 0, originX: 1 }}
           animate={{ scaleX: 1 }}
-          transition={{ duration: 0.2, ease: "easeOut", delay: 1.8 }}
+          transition={{
+            type: "spring",
+            duration: 0.4,
+            ease: "easeOut",
+            delay: 1.8,
+          }}
           className="bg-primary col-span-6 md:col-span-5 p-14 pt-12 rounded-2xl shadow-lg transition-shadow duration-300 flex flex-col justify-between"
         >
           <motion.h1
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.1, delay: 2.3 }}
+            transition={{
+              type: "spring",
+              duration: 0.3,
+              delay: 2.3,
+            }}
             className="font-sans font-extrabold text-foreground text-6xl"
           >
             University Projects
@@ -45,7 +60,11 @@ export default function Page() {
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.2, delay: 2.1 }}
+            transition={{
+              type: "spring",
+              duration: 0.4,
+              delay: 2.1,
+            }}
             className="text-foreground font-semibold md:text-base pt-6 pb-4"
           >
             Explore a collection of academic projects made at Universidade de
@@ -55,7 +74,11 @@ export default function Page() {
           <motion.button
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 2.2 }}
+            transition={{
+              type: "spring",
+              duration: 0.6,
+              delay: 2.2,
+            }}
             whileHover={{
               backgroundColor: "var(--secondary)",
               transition: { duration: 0.1, delay: 0 },
@@ -95,7 +118,12 @@ export default function Page() {
         <AnimatedCard
           initial={{ scaleY: 0, originY: 0 }}
           animate={{ scaleY: 1 }}
-          transition={{ duration: 0.2, ease: "easeOut", delay: 1.8 }}
+          transition={{
+            type: "spring",
+            duration: 0.3,
+            ease: "easeOut",
+            delay: 1.8,
+          }}
           className="bg-secondary col-span-6 md:col-span-4 p-4"
         >
           <div className="flex items-center justify-center h-full">
@@ -120,13 +148,18 @@ export default function Page() {
         <AnimatedCard
           initial={{ scaleX: 0, originX: 0 }}
           animate={{ scaleX: 1 }}
-          transition={{ duration: 0.2, ease: "easeOut", delay: 1.8 }}
+          transition={{
+            type: "spring",
+            duration: 0.4,
+            ease: "easeOut",
+            delay: 1.8,
+          }}
           className="bg-secondary row-span-2 p-14 flex flex-col justify-between"
         >
           <motion.h1
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 2 }}
+            transition={{ type: "spring", duration: 0.5, delay: 2 }}
             className="font-sans font-extrabold text-foreground text-6xl"
           >
             My Personal Projects
@@ -135,7 +168,7 @@ export default function Page() {
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 2.3 }}
+            transition={{ type: "spring", duration: 0.6, delay: 2.3 }}
             className="text-foreground font-semibold md:text-base pt-6"
           >
             Here you can find a growing collection of personal projects I've
@@ -146,7 +179,7 @@ export default function Page() {
           <motion.button
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 2.1 }}
+            transition={{ type: "spring", duration: 0.5, delay: 2.1 }}
             whileHover={{
               backgroundColor: "var(--primary)",
               transition: { duration: 0.1, delay: 0 },
@@ -160,7 +193,12 @@ export default function Page() {
         <AnimatedCard
           initial={{ scaleX: 0, scaleY: 0, originX: 0, originY: 0 }}
           animate={{ scaleX: 1, scaleY: 1 }}
-          transition={{ duration: 0.2, ease: "easeOut", delay: 1.7 }}
+          transition={{
+            type: "spring",
+            duration: 0.3,
+            ease: "easeOut",
+            delay: 1.7,
+          }}
           className="bg-primary row-span-2 p-6"
         >
           <ul className="list-none">
