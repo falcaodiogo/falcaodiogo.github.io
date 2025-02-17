@@ -8,7 +8,7 @@ const ProjectsCard = ({
   description,
   link,
   image,
-  bgColor = "bg-terciary",
+  bgColor = "bg-variant",
   buttonColor = "bg-primary",
 }: {
   name: string;
@@ -49,7 +49,7 @@ const ProjectsCard = ({
             height={400}
           />
           <div
-            className={`absolute inset-0 bg-gradient-to-r from-terciary via-transparent to-transparent`}
+            className={`absolute inset-0 bg-gradient-to-r from-variant via-transparent to-transparent`}
           ></div>
         </div>
       </div>
