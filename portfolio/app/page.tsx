@@ -25,7 +25,7 @@ export default function Page() {
             duration: 0.5,
             delay: 2,
           }}
-          className="font-archivo font-bold text-foreground text-2xl md:text-3xl text-center flex items-center justify-center h-full"
+          className="font-archivo font-bold text-foreground text-3xl text-center flex items-center ps-8 md:justify-center h-full"
         >
           Made by Diogo
         </motion.h1>
@@ -51,7 +51,7 @@ export default function Page() {
               duration: 0.3,
               delay: 2.3,
             }}
-            className="font-sans font-extrabold text-foreground text-6xl"
+            className="font-sans font-extrabold text-foreground text-2xl sm:text-xl md:text-3xl lg:text-5xl xl:text-6xl"
           >
             University Projects
           </motion.h1>
@@ -64,7 +64,7 @@ export default function Page() {
               duration: 0.4,
               delay: 2.1,
             }}
-            className="text-foreground font-semibold md:text-base pt-6 pb-4"
+            className="text-foreground font-semibold md:text-base pt-6 pb-4 sm:pb-8"
           >
             Explore a collection of academic projects made at Universidade de
             Aveiro during my bachelor's.
@@ -82,7 +82,7 @@ export default function Page() {
               backgroundColor: "var(--secondary)",
               transition: { duration: 0.1, delay: 0 },
             }}
-            className="bg-variant text-foreground font-semibold p-4 rounded-xl transition-colors duration-300 w-1/3 self-start"
+            className="bg-variant text-foreground font-semibold p-4 rounded-xl transition-colors duration-300 self-start"
           >
             <Link href="/university">
               <h1>Explore</h1>
@@ -159,7 +159,7 @@ export default function Page() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ type: "spring", duration: 0.5, delay: 2 }}
-            className="font-sans font-extrabold text-foreground text-6xl"
+            className="font-sans font-extrabold text-foreground text-2xl sm:text-xl md:text-3xl lg:text-5xl xl:text-6xl"
           >
             My Personal Projects
           </motion.h1>
@@ -168,7 +168,7 @@ export default function Page() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ type: "spring", duration: 0.6, delay: 2.3 }}
-            className="text-foreground font-semibold md:text-base pt-6"
+            className="text-foreground font-semibold md:text-base pt-6 sm:pb-8"
           >
             Here you can find a growing collection of personal projects I've
             been working on during my free time. It's small right now, but hey,
@@ -183,7 +183,7 @@ export default function Page() {
               backgroundColor: "var(--primary)",
               transition: { duration: 0.1, delay: 0 },
             }}
-            className="bg-surface text-foreground font-semibold p-4 rounded-xl transition-colors duration-300 w-1/3 self-start"
+            className="bg-surface text-foreground font-semibold p-4 rounded-xl transition-colors duration-300 self-start"
           >
             <Link href="/personal">
               <h1>See More</h1>
