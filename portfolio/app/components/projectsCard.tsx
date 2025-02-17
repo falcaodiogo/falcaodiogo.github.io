@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
-import { Element } from "react-scroll";
 
 const ProjectsCard = ({
   name,
@@ -50,7 +49,7 @@ const ProjectsCard = ({
             height={400}
           />
           <div
-            className={`absolute inset-0 bg-gradient-to-r from-${bgColor.replace("bg-", "")} via-transparent to-transparent`}
+            className={`absolute inset-0 bg-gradient-to-r from-primary via-transparent to-transparent`}
           ></div>
         </div>
       </div>
