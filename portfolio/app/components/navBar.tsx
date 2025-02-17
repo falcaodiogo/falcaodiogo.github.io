@@ -1,59 +1,65 @@
 "use client";
 
-import { Link } from "react-scroll";
+import { Link as ScrollLink } from "react-scroll";
+import Link from "next/link";
 
 const NavBar = () => {
   return (
     <ul className="bg-secondary font-semibold w-full h-1/4 p-8 rounded-2xl shadow-lg flex justify-evenly space-x-4">
       <li>
-        <Link
+        <Link href="/">
+          <h1>Home</h1>
+        </Link>
+      </li>
+      <li>
+        <ScrollLink
           to="health-tracker"
           smooth={true}
           duration={600}
           className="cursor-pointer"
         >
           Health Tracker
-        </Link>
+        </ScrollLink>
       </li>
       <li>
-        <Link
+        <ScrollLink
           to="heart-game"
           smooth={true}
           duration={600}
           className="cursor-pointer"
         >
           Heart Serious Game
-        </Link>
+        </ScrollLink>
       </li>
       <li>
-        <Link
+        <ScrollLink
           to="smart-homes"
           smooth={true}
           duration={600}
           className="cursor-pointer"
         >
           SmartHomes
-        </Link>
+        </ScrollLink>
       </li>
       <li>
-        <Link
+        <ScrollLink
           to="gestao-nucleos"
           smooth={true}
           duration={600}
           className="cursor-pointer"
         >
           Gestão de Núcleos
-        </Link>
+        </ScrollLink>
       </li>
       <li>
-        <Link
+        <ScrollLink
           to="travel-mate"
           smooth={true}
           duration={600}
           className="cursor-pointer"
         >
           TravelMate
-        </Link>
+        </ScrollLink>
       </li>
     </ul>
   );
