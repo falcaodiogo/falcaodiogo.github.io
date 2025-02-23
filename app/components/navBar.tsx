@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const NavBar = () => {
   return (
-    <ul className="bg-secondary font-semibold w-full h-1/4 p-8 rounded-2xl shadow-lg flex justify-evenly space-x-4">
+    <ul className="bg-secondary font-semibold w-full p-8 rounded-2xl shadow-lg flex flex-wrap justify-evenly gap-4 sm:flex-nowrap sm:justify-between">
       <li>
         <Link href="/">
           <h1>Home</h1>

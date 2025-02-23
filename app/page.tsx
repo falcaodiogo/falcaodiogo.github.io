@@ -6,8 +6,22 @@ import Image from "next/image";
 import Link from "next/link";
 import AnimatedCard from "./components/animatedCard";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 export default function Page() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkScreenSize();
+    window.addEventListener("resize", checkScreenSize);
+
+    return () => window.removeEventListener("resize", checkScreenSize);
+  }, []);
+
   return (
     <div className="font-archivo min-h-screen text-foreground p-4 md:p-8 grid gap-4 md:gap-8 grid-cols-1 md:grid-cols-3 grid-rows-7">
       <AnimatedCard
@@ -90,11 +104,11 @@ export default function Page() {
           </motion.button>
         </AnimatedCard>
 
-        <AnimatedCard
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{
-            x: ["-30%", "-30%", "-30%", "0%"],
-            y: ["30%", "30%", "30%", "0%"],
+            x: isMobile ? "0%" : ["-30%", "-30%", "-30%", "0%"],
+            y: isMobile ? "0%" : ["30%", "30%", "30%", "0%"],
             scale: [1.5, 1, 1, 1],
             opacity: [1, 1, 1, 1],
           }}
@@ -112,7 +126,7 @@ export default function Page() {
             priority
             className="w-full h-full object-cover rounded-2xl"
           />
-        </AnimatedCard>
+        </motion.div>
 
         <AnimatedCard
           initial={{ scaleY: 0, originY: 0 }}
