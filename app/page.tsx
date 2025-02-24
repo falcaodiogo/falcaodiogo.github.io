@@ -108,7 +108,9 @@ export default function Page() {
           initial={{ opacity: 0 }}
           animate={{
             x: isMobile ? "0%" : ["-30%", "-30%", "-30%", "0%"],
-            y: isMobile ? "0%" : ["30%", "30%", "30%", "0%"],
+            y: isMobile
+              ? ["-60%", "-60%", "-60%", "0%"]
+              : ["30%", "30%", "30%", "0%"],
             scale: [1.5, 1, 1, 1],
             opacity: [1, 1, 1, 1],
           }}
@@ -147,9 +149,9 @@ export default function Page() {
               className="font-sans font-bold text-foreground text-lg p-8"
             >
               Hello! I'm Diogo Falcão, a Software Engineer at the University of
-              Aveiro. I'm 21 years old and in the final year of my Computer
-              Science degree at Universidade de Aveiro, Portugal. Feel free to
-              explore my website.
+              Aveiro (DETI). I'm 21 years old and currently in my final year of
+              a Computer Science degree. Feel free to explore my website and
+              learn more about my work!
             </motion.h1>
           </div>
         </AnimatedCard>
@@ -173,7 +175,7 @@ export default function Page() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ type: "spring", duration: 0.5, delay: 2 }}
-            className="font-sans font-extrabold text-foreground text-2xl sm:text-xl md:text-3xl lg:text-5xl xl:text-6xl"
+            className="font-sans font-extrabold text-foreground text-xl sm:text-xl md:text-3xl lg:text-5xl xl:text-6xl"
           >
             My Personal Projects
           </motion.h1>
@@ -182,7 +184,7 @@ export default function Page() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ type: "spring", duration: 0.6, delay: 2.3 }}
-            className="text-foreground font-semibold md:text-base pt-6 pb-8 sm:pb-8"
+            className="text-foreground font-semibold md:text-base pt-6 pb-8"
           >
             Here you can find a growing collection of personal projects I've
             been working on during my free time. It's small right now, but hey,
@@ -219,27 +221,39 @@ export default function Page() {
           <ul className="list-none">
             <li className="text-foreground font-semibold md:text-base p-8">
               <div className="flex gap-4 items-center justify-between">
-                <a
-                  href="https://github.com/falcaodiogo"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  GitHub
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/diogofalcao2/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  LinkedIn
-                </a>
-                <a
-                  href="mailto:falcao.diogo@ua.pt"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Contact
-                </a>
+                <button className="bg-variant text-foreground font-semibold p-4 rounded-xl transition-colors duration-300 self-start hover:bg-secondary">
+                  <div className="sm:hidden">Git</div>
+                  <a
+                    href="https://github.com/falcaodiogo"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hidden sm:block"
+                  >
+                    GitHub
+                  </a>
+                </button>
+                <button className="bg-variant text-foreground font-semibold p-4 rounded-xl transition-colors duration-300 self-start hover:bg-secondary">
+                  <div className="sm:hidden">In</div>
+                  <a
+                    href="https://www.linkedin.com/in/diogofalcao2/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hidden sm:block"
+                  >
+                    LinkedIn
+                  </a>
+                </button>
+                <button className="bg-variant text-foreground font-semibold p-4 rounded-xl transition-colors duration-300 self-start hover:bg-secondary">
+                  <div className="sm:hidden">Mail</div>
+                  <a
+                    href="mailto:falcao.diogo@ua.pt"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hidden sm:block"
+                  >
+                    Contact
+                  </a>
+                </button>
               </div>
             </li>
           </ul>

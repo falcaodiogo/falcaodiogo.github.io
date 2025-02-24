@@ -20,8 +20,8 @@ export default function digitalSkills() {
         Digital Skills
       </motion.h1>
 
-      <div className="flex flex-wrap gap-4 ps-8 sm:pb-8">
-        <div className="bg-primary p-4 rounded-xl transition hover:bg-surface">
+      <div className="flex flex-wrap gap-4 ps-8 pb-8">
+        <div className="border-solid border-2 border-primary p-4 rounded-xl transition hover:bg-surface hover:border-terciary">
           <motion.h1
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -31,7 +31,7 @@ export default function digitalSkills() {
             Kotlin
           </motion.h1>
         </div>
-        <div className="bg-primary p-4 rounded-xl transition hover:bg-surface">
+        <div className="border-solid border-2 border-primary p-4 rounded-xl transition hover:bg-surface hover:border-terciary">
           <motion.h1
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -41,7 +41,7 @@ export default function digitalSkills() {
             Flutter
           </motion.h1>
         </div>
-        <div className="bg-primary p-4 rounded-xl transition hover:bg-surface">
+        <div className="border-solid border-2 border-primary p-4 rounded-xl transition hover:bg-surface hover:border-terciary">
           <motion.h1
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -51,7 +51,7 @@ export default function digitalSkills() {
             TypeScript
           </motion.h1>
         </div>
-        <div className="bg-primary p-4 rounded-xl transition hover:bg-surface">
+        <div className="border-solid border-2 border-primary p-4 rounded-xl transition hover:bg-surface hover:border-terciary">
           <motion.h1
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -61,34 +61,26 @@ export default function digitalSkills() {
             Java
           </motion.h1>
         </div>
-        <div className="bg-primary p-4 rounded-xl transition hover:bg-surface">
-          <motion.h1
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 2.3 }}
-            className="text-foreground font-semibold"
-          >
-            C#
-          </motion.h1>
-        </div>
-        <div className="bg-primary p-4 rounded-xl transition hover:bg-surface">
+        <div className="border-solid border-2 border-primary p-4 rounded-xl transition hover:bg-surface hover:border-terciary">
           <motion.h1
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 2.2 }}
             className="text-foreground font-semibold"
           >
-            React Native
+            React
           </motion.h1>
         </div>
-        <div className="bg-primary p-4 rounded-xl transition hover:bg-surface">
+        <div className="border-solid border-2 border-primary p-4 rounded-xl transition hover:bg-primary hover:border-terciary">
           <motion.h1
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 2.1 }}
             className="text-foreground font-semibold"
           >
-            ...
+            <a href="./CV.pdf" download="cv">
+              See others in CV
+            </a>
           </motion.h1>
         </div>
       </div>
