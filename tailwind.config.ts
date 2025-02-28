@@ -1,4 +1,3 @@
-import { Crimson_Pro } from "next/font/google";
 import type { Config } from "tailwindcss";
 
 export default {

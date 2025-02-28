@@ -13,7 +13,7 @@ export default function Page() {
 
   useEffect(() => {
     const checkScreenSize = () => {
-      setIsMobile(window.innerWidth < 768);
+      setIsMobile(window.innerWidth < 800);
     };
 
     checkScreenSize();
@@ -120,7 +120,7 @@ export default function Page() {
             delay: 0.4,
             ease: "easeOut",
           }}
-          className="bg-terciary col-span-6 md:col-span-3"
+          className="bg-terciary col-span-6 md:col-span-3 rounded-2xl"
         >
           <Image
             src={meImage}
@@ -221,39 +221,38 @@ export default function Page() {
           <ul className="list-none">
             <li className="text-foreground font-semibold md:text-base p-8">
               <div className="flex gap-4 items-center justify-between">
-                <button className="bg-variant text-foreground font-semibold p-4 rounded-xl transition-colors duration-300 self-start hover:bg-secondary">
-                  <div className="sm:hidden">Git</div>
-                  <a
-                    href="https://github.com/falcaodiogo"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hidden sm:block"
-                  >
-                    GitHub
-                  </a>
-                </button>
-                <button className="bg-variant text-foreground font-semibold p-4 rounded-xl transition-colors duration-300 self-start hover:bg-secondary">
-                  <div className="sm:hidden">In</div>
-                  <a
-                    href="https://www.linkedin.com/in/diogofalcao2/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hidden sm:block"
-                  >
-                    LinkedIn
-                  </a>
-                </button>
-                <button className="bg-variant text-foreground font-semibold p-4 rounded-xl transition-colors duration-300 self-start hover:bg-secondary">
-                  <div className="sm:hidden">Mail</div>
-                  <a
-                    href="mailto:falcao.diogo@ua.pt"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hidden sm:block"
-                  >
-                    Contact
-                  </a>
-                </button>
+                <a
+                  href="https://github.com/falcaodiogo"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <button className="bg-variant text-foreground font-semibold p-4 rounded-xl transition-colors duration-300 self-start hover:bg-secondary">
+                    <span className="sm:hidden">Git</span>
+                    <span className="hidden sm:block">GitHub</span>
+                  </button>
+                </a>
+
+                <a
+                  href="https://www.linkedin.com/in/diogofalcao2/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <button className="bg-variant text-foreground font-semibold p-4 rounded-xl transition-colors duration-300 self-start hover:bg-secondary">
+                    <span className="sm:hidden">In</span>
+                    <span className="hidden sm:block">LinkedIn</span>
+                  </button>
+                </a>
+
+                <a
+                  href="mailto:falcao.diogo@ua.pt"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <button className="bg-variant text-foreground font-semibold p-4 rounded-xl transition-colors duration-300 self-start hover:bg-secondary">
+                    <span className="sm:hidden">Mail</span>
+                    <span className="hidden sm:block">Contact</span>
+                  </button>
+                </a>
               </div>
             </li>
           </ul>
