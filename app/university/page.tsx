@@ -8,6 +8,7 @@ import SmartHomes from "../assets/smartHomes/Home.png";
 import HSG from "../assets/heartSeriousGame/hsg.png";
 import ProjectsCard from "../components/projectsCard";
 import TravelMate from "../assets/travelMate/image.png";
+import CityConnect from "../assets/cityconnected/cityconnected.png";
 import { Element } from "react-scroll";
 
 const UniversityPage = () => {
@@ -59,6 +60,14 @@ const UniversityPage = () => {
             description="Travel Mate is a React Native app focused on design and user experience. It helps users see past trips, plan new ones, and share experiences with friends. The app also provides a map with points of interest and notes."
             link="https://github.com/falcaodiogo/Projeto-TravelMate-IHC?tab=readme-ov-file"
             image={TravelMate}
+          />
+        </Element>
+        <Element name="city-connect">
+          <ProjectsCard
+            name="City Connect"
+            description="Development of a digital platform MVP for bus services, focusing on software quality, continuous testing, integration, and delivery. Key components include a Client Portal, Staff Portal, and Digital Signage. Goals: streamline operations, improve user experience, and unify services."
+            link="https://github.com/CityConnect-TQS/control-room"
+            image={CityConnect}
           />
         </Element>
       </div>

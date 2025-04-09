@@ -61,6 +61,16 @@ const NavBar = () => {
           TravelMate
         </ScrollLink>
       </li>
+      <li>
+        <ScrollLink
+          to="city-connect"
+          smooth={true}
+          duration={600}
+          className="cursor-pointer"
+        >
+          City Connect
+        </ScrollLink>
+      </li>
     </ul>
   );
 };
