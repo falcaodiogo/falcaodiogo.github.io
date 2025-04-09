@@ -28,7 +28,7 @@ const ProjectsCard = ({
         className={`relative ${bgColor} grid grid-cols-1 md:grid-cols-2 space-x-14 font-bold w-full h-5/6 rounded-2xl shadow-lg overflow-hidden`}
       >
         <div className="flex flex-col justify-evenly space-y-8 z-10 p-8">
-          <div className="text-6xl">{name}</div>
+          <div className="md:text-6xl text-4xl">{name}</div>
           <div className="text-lg font-semibold">{description}</div>
           <div
             className={`${buttonColor} text-foreground font-semibold p-4 rounded-xl hover:brightness-110 transition-colors duration-300 w-1/3 self-start`}

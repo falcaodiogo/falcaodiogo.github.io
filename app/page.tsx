@@ -39,7 +39,7 @@ export default function Page() {
             duration: 0.5,
             delay: 2,
           }}
-          className="font-archivo font-bold text-foreground text-3xl text-center flex items-center ps-8 md:justify-center h-full"
+          className="font-archivo font-bold text-foreground text-4xl text-center flex items-center ps-8 md:justify-center h-full"
         >
           Made by Diogo
         </motion.h1>
@@ -65,7 +65,7 @@ export default function Page() {
               duration: 0.3,
               delay: 2.3,
             }}
-            className="font-sans font-extrabold text-foreground text-2xl sm:text-xl md:text-3xl lg:text-5xl xl:text-6xl"
+            className="font-sans font-extrabold text-foreground text-3xl sm:text-2xl md:text-3xl lg:text-5xl xl:text-6xl"
           >
             University Projects
           </motion.h1>
@@ -175,7 +175,7 @@ export default function Page() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ type: "spring", duration: 0.5, delay: 2 }}
-            className="font-sans font-extrabold text-foreground text-xl sm:text-xl md:text-3xl lg:text-5xl xl:text-6xl"
+            className="font-sans font-extrabold text-foreground text-3xl sm:text-2xl md:text-3xl lg:text-5xl xl:text-6xl"
           >
             My Personal Projects
           </motion.h1>
