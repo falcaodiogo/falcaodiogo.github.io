@@ -149,7 +149,7 @@ export default function Page() {
               className="font-sans font-bold text-foreground text-lg p-8"
             >
               Hello! I'm Diogo Falcão, a Software Engineer at the University of
-              Aveiro (DETI). I'm 21 years old and currently in my final year of
+              Aveiro (DETI). I'm 22 years old and currently in my final year of
               a Computer Science degree. Feel free to explore my website and
               learn more about my work!
             </motion.h1>
