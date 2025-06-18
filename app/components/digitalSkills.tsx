@@ -71,18 +71,18 @@ export default function digitalSkills() {
             React
           </motion.h1>
         </div>
-        <div className="border-solid border-2 border-primary p-4 rounded-xl transition hover:bg-primary hover:border-terciary">
-          <motion.h1
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 2.1 }}
-            className="text-foreground font-semibold"
-          >
-            <a href="./CV.pdf" download="cv">
+        <a href="./CV.pdf" download="cv">
+          <div className="border-solid border-2 border-primary p-4 rounded-xl transition hover:bg-primary hover:border-terciary">
+            <motion.h1
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 2.1 }}
+              className="text-foreground font-semibold"
+            >
               See others in CV
-            </a>
-          </motion.h1>
-        </div>
+            </motion.h1>
+          </div>
+        </a>
       </div>
     </AnimatedCard>
   );

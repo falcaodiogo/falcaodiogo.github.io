@@ -84,24 +84,24 @@ export default function Page() {
             Aveiro during my bachelor's.
           </motion.p>
 
-          <motion.button
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{
-              type: "spring",
-              duration: 0.6,
-              delay: 2.2,
-            }}
-            whileHover={{
-              backgroundColor: "var(--secondary)",
-              transition: { duration: 0.1, delay: 0 },
-            }}
-            className="bg-variant text-foreground font-semibold p-4 rounded-xl transition-colors duration-300 self-start"
-          >
-            <Link href="/university">
+          <Link href="/university">
+            <motion.button
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{
+                type: "spring",
+                duration: 0.6,
+                delay: 2.2,
+              }}
+              whileHover={{
+                backgroundColor: "var(--secondary)",
+                transition: { duration: 0.1, delay: 0 },
+              }}
+              className="bg-variant text-foreground font-semibold p-4 rounded-xl transition-colors duration-300 self-start"
+            >
               <h1>Explore</h1>
-            </Link>
-          </motion.button>
+            </motion.button>
+          </Link>
         </AnimatedCard>
 
         <motion.div
@@ -191,20 +191,20 @@ export default function Page() {
             even the best things start in a modest way.
           </motion.p>
 
-          <motion.button
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ type: "spring", duration: 0.5, delay: 2.1 }}
-            whileHover={{
-              backgroundColor: "var(--primary)",
-              transition: { duration: 0.1, delay: 0 },
-            }}
-            className="bg-surface text-foreground font-semibold p-4 rounded-xl transition-colors duration-300 self-start"
-          >
-            <Link href="/personal">
+          <Link href="/personal">
+            <motion.button
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ type: "spring", duration: 0.5, delay: 2.1 }}
+              whileHover={{
+                backgroundColor: "var(--primary)",
+                transition: { duration: 0.1, delay: 0 },
+              }}
+              className="bg-surface text-foreground font-semibold p-4 rounded-xl transition-colors duration-300 self-start"
+            >
               <h1>See More</h1>
-            </Link>
-          </motion.button>
+            </motion.button>
+          </Link>
         </AnimatedCard>
 
         <AnimatedCard
