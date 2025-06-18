@@ -21,6 +21,8 @@ const UniversityPage = () => {
             description="CP App is a Kotlin-based Android app for tracking Portuguese trains in real time using the Comboios and CP public APIs. It features live train schedules, delay updates, an AI-powered chatbot, and a customizable dashboard. Designed with Material Design 3, it offers Google login integration and quick access to CP's website. This app is for educational and personal use only."
             link="https://github.com/falcaodiogo/CP"
             image={CP}
+            bgColor="bg-primary"
+            buttonColor="bg-variant"
           />
         </Element>
         <Element name="portofolio">
