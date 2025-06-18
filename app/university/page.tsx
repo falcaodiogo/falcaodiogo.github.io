@@ -9,6 +9,7 @@ import HSG from "../assets/heartSeriousGame/hsg.png";
 import ProjectsCard from "../components/projectsCard";
 import TravelMate from "../assets/travelMate/image.png";
 import CityConnect from "../assets/cityconnected/cityconnected.png";
+import FindIt from "../assets/findit/image.png";
 import { Element } from "react-scroll";
 
 const UniversityPage = () => {
@@ -26,6 +27,8 @@ const UniversityPage = () => {
       The app features step tracking, calorie monitoring, exercise planning, and sleep tracking. The WearOS version complements it with immediate feedback during physical activities."
             link="https://github.com/falcaodiogo/Projeto2-ICM"
             image={HealthTracker}
+            bgColor="bg-primary"
+            buttonColor="bg-variant"
           />
         </Element>
         <Element name="heart-game">
@@ -34,7 +37,18 @@ const UniversityPage = () => {
             description="Heart Serious Game (HS Game) is a cross-platform app built with Flutter, using WearOS smartwatches to track heart rates in real-time. Two players compete by maintaining higher average heart rates, creating an competitive experience."
             link="https://github.com/falcaodiogo/Projeto1-ICM"
             image={HSG}
+            bgColor="bg-surface"
             buttonColor="bg-secondary"
+          />
+        </Element>
+        <Element name="findit">
+          <ProjectsCard
+            name="FindIt"
+            description="Development of a smart shopping assistant for supermarket environments, leveraging AI to personalize recommendations, optimize in-store navigation, and manage shopping lists intelligently. Key features include product localization, a multimodal interface, and real-time comparison across multiple supermarkets. Goals: save time and money, simplify decision-making, and elevate the overall shopping experience."
+            link="https://github.com/PI-FindIt"
+            image={FindIt}
+            bgColor="bg-primary"
+            buttonColor="bg-variant"
           />
         </Element>
         <Element name="smart-homes">
@@ -47,10 +61,11 @@ const UniversityPage = () => {
         </Element>
         <Element name="gestao-nucleos">
           <ProjectsCard
-            name="Gestão de Núcleos"
-            description="Gestão de Núcleos is a C# app made with SQL and its a Core Management System that simplifies event management with a database and user-friendly interface. It supports adding events, managing workers, wristbands, and a warehouse. The system tracks profits and sales."
+            name="NEI - Gestão de Núcleos"
+            description="Gestão de Núcleos is a C# app made with SQL and its a Core Management System that simplifies event management with a database for the Núcleo de Engenharia Informática (AAUAv). It supports adding events, managing workers, wristbands, and a warehouse. The system tracks profits and sales."
             link="https://github.com/falcaodiogo/Projeto-Base-de-Dados"
             image={NEIImage}
+            bgColor="bg-surface"
             buttonColor="bg-secondary"
           />
         </Element>
@@ -60,6 +75,8 @@ const UniversityPage = () => {
             description="Travel Mate is a React Native app focused on design and user experience. It helps users see past trips, plan new ones, and share experiences with friends. The app also provides a map with points of interest and notes."
             link="https://github.com/falcaodiogo/Projeto-TravelMate-IHC?tab=readme-ov-file"
             image={TravelMate}
+            bgColor="bg-primary"
+            buttonColor="bg-variant"
           />
         </Element>
         <Element name="city-connect">
