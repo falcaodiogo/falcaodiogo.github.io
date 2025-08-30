@@ -16,6 +16,8 @@ export default function Page() {
       setIsMobile(window.innerWidth < 800);
     };
 
+    setTimeout(() => {}, 100);
+
     checkScreenSize();
     window.addEventListener("resize", checkScreenSize);
 
@@ -146,12 +148,13 @@ export default function Page() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 2 }}
-              className="font-sans font-bold text-foreground text-lg p-8"
+              className="font-sans font-light text-foreground text-lg p-8"
             >
-              Hello! I'm Diogo Falcão, a Software Engineer at the University of
-              Aveiro (DETI). I'm 22 years old and currently in my final year of
-              a Computer Science degree. Feel free to explore my website and
-              learn more about my work!
+              Hello! I'm Diogo Falcão, a 22-year-old Software Engineer from the
+              University of Aveiro. I hold a Bachelor's in Software Engineering
+              and I'm pursuing a Master's in Communication and Web Technologies.
+              I'm passionate about mobile programming. Feel free to explore my
+              website!
             </motion.h1>
           </div>
         </AnimatedCard>

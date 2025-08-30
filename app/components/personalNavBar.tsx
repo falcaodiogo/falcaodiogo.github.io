@@ -21,7 +21,7 @@ const NavBar = () => {
             duration={600}
             className="cursor-pointer bg-surface text-foreground font-semibold p-3 md:p-4 rounded-xl transition-colors h-full flex items-center justify-center text-center block"
           >
-            CP - Comboios Portugal
+            CP
           </ScrollLink>
         </li>
         <li className="w-full">
