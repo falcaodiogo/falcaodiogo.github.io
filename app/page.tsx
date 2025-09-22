@@ -32,6 +32,7 @@ export default function Page() {
         transition={{ duration: 0.4, ease: "easeOut", delay: 1.7 }}
         className="bg-primary md:col-span-3 p-6"
       >
+        
         <motion.h1
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
