@@ -185,6 +185,8 @@ export default function Home() {
       <h1
         ref={changeTextRef}
         className="opacity-0 md:block text-sm text-zinc-300/70 underline z-50 absolute md:top-14 md:right-14 bottom-8 cursor-pointer"
+        // go to /old_website
+        onClick={() => (window.location.href = "/old_website")}
       >
         Mudar para a versão antiga
       </h1>
