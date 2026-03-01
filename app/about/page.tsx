@@ -299,7 +299,7 @@ export default function About() {
 
       <div className="contacts-section flex flex-col justify-center items-center gap-12 pb-44">
         <h1 className="text-3xl md:text-5xl contact-element">Contacts</h1>
-        <div className="flex flex-col md:flex-row gap-6 md:gap-8">
+        <div className="flex flex-col items-center md:flex-row gap-6 md:gap-8">
           <div className="contact-element">
             <NavButton
               variant="solid"
