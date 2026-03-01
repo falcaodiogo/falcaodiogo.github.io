@@ -1,266 +1,193 @@
 "use client";
 
-import meImage from "./assets/me.jpg";
-import DigitalSkills from "./components/digitalSkills";
-import Image from "next/image";
-import Link from "next/link";
-import AnimatedCard from "./components/animatedCard";
-import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useLayoutEffect, useRef } from "react";
+import gsap from "gsap";
+import IntroAnimation from "@/app/components/IntroAnimation";
+import FloatingNav from "./components/FloatingNav";
+import NavButton from "./components/button";
 
-export default function Page() {
-  const [isMobile, setIsMobile] = useState(false);
+export default function Home() {
+  const containerRef = useRef<HTMLSpanElement>(null);
+  const imageRef = useRef<HTMLVideoElement>(null);
+  const textRef = useRef<HTMLHeadingElement>(null);
+  const navBarRef = useRef<HTMLDivElement>(null);
+  const buttonsRef = useRef<HTMLDivElement>(null);
+  const changeTextRef = useRef<HTMLHeadingElement>(null);
 
-  useEffect(() => {
-    const checkScreenSize = () => {
-      setIsMobile(window.innerWidth < 800);
-    };
+  useLayoutEffect(() => {
+    const hasVisited = sessionStorage.getItem("hasVisited");
 
-    setTimeout(() => {}, 100);
+    const ctx = gsap.context(() => {
+      if (!hasVisited) {
+        sessionStorage.setItem("hasVisited", "true");
 
-    checkScreenSize();
-    window.addEventListener("resize", checkScreenSize);
+        const tl = gsap.timeline({
+          delay: 5,
+        });
 
-    return () => window.removeEventListener("resize", checkScreenSize);
+        tl.to(navBarRef.current, {
+          opacity: 1,
+          duration: 1.5,
+          ease: "power3.out",
+        });
+
+        tl.to(textRef.current, {
+          opacity: 1,
+          duration: 1,
+          ease: "power3.out",
+        })
+          .to(imageRef.current, {
+            opacity: 1,
+            duration: 0.8,
+            ease: "power2.inOut",
+          })
+          .add(() => {
+            if (!containerRef.current) return;
+            const rect = containerRef.current.getBoundingClientRect();
+
+            gsap.set(containerRef.current, {
+              position: "fixed",
+              top: rect.top,
+              left: rect.left,
+              width: rect.width,
+              height: rect.height,
+              zIndex: 40,
+              borderRadius: 0,
+            });
+          })
+          .to(containerRef.current, {
+            top: 0,
+            left: 0,
+            width: "100vw",
+            height: "100vh",
+            duration: 1.5,
+            ease: "expo.inOut",
+          })
+          .to(
+            buttonsRef.current,
+            {
+              delay: 0.8,
+              opacity: 1,
+              duration: 1,
+              ease: "power3.out",
+            },
+            "<"
+          )
+          .to(changeTextRef.current, {
+            opacity: 1,
+            duration: 2,
+            ease: "power3.out",
+          });
+      } else {
+        gsap.set(
+          [
+            navBarRef.current,
+            textRef.current,
+            buttonsRef.current,
+            changeTextRef.current,
+          ],
+          { opacity: 1 }
+        );
+
+        const tl = gsap.timeline({ delay: 0.3 });
+
+        tl.to(imageRef.current, {
+          opacity: 1,
+          duration: 0.8,
+          ease: "power2.inOut",
+        })
+          .add(() => {
+            if (!containerRef.current) return;
+            const rect = containerRef.current.getBoundingClientRect();
+
+            gsap.set(containerRef.current, {
+              position: "fixed",
+              top: rect.top,
+              left: rect.left,
+              width: rect.width,
+              height: rect.height,
+              zIndex: 40,
+              borderRadius: 0,
+            });
+          })
+          .to(containerRef.current, {
+            top: 0,
+            left: 0,
+            width: "100vw",
+            height: "100vh",
+            duration: 1.5,
+            ease: "expo.inOut",
+          });
+      }
+    });
+
+    return () => ctx.revert();
   }, []);
 
   return (
-    <div className="font-archivo min-h-screen text-foreground p-4 md:p-8 grid gap-4 md:gap-8 grid-cols-1 md:grid-cols-3 grid-rows-7">
-      <AnimatedCard
-        initial={{ opacity: 0, scaleY: 0, originY: 1 }}
-        animate={{ opacity: 1, scaleY: 1 }}
-        transition={{ duration: 0.4, ease: "easeOut", delay: 1.7 }}
-        className="bg-primary md:col-span-3 p-6"
+    <div className="flex flex-col md:gap-8 gap-4 min-h-screen items-center justify-center font-league-spartan bg-black overflow-hidden">
+      <IntroAnimation />
+      <h1
+        ref={textRef}
+        className="opacity-0 text-center md:text-5xl text-2xl font-normal text-white relative z-50"
       >
-        <motion.h1
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{
-            type: "spring",
+        <span className="relative z-50">
+          Hello, I&apos;m Diogo! Welcome to
+          <br />
+          my{" "}
+        </span>
+        <span className="relative inline-block">
+          <span className="relative z-50">brand new</span>
 
-            duration: 0.5,
-            delay: 2,
-          }}
-          className="font-archivo font-bold text-foreground text-4xl text-center flex items-center ps-8 md:justify-center h-full"
-        >
-          Made by Diogo
-        </motion.h1>
-      </AnimatedCard>
-
-      <div className="md:col-span-2 pt-4 md:pt-0 grid md:grid-cols-8 gap-8 row-span-6">
-        <AnimatedCard
-          initial={{ scaleX: 0, originX: 1 }}
-          animate={{ scaleX: 1 }}
-          transition={{
-            type: "spring",
-            duration: 0.4,
-            ease: "easeOut",
-            delay: 1.8,
-          }}
-          className="bg-primary col-span-6 md:col-span-5 p-14 pt-12 rounded-2xl shadow-lg transition-shadow duration-300 flex flex-col justify-between"
-        >
-          <motion.h1
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{
-              type: "spring",
-              duration: 0.3,
-              delay: 2.3,
-            }}
-            className="font-sans font-extrabold text-foreground text-3xl sm:text-2xl md:text-3xl lg:text-5xl xl:text-6xl"
+          <span
+            ref={containerRef}
+            className="absolute -bottom-3 left-0 h-1.5 w-full bg-white overflow-hidden"
           >
-            University Projects
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{
-              type: "spring",
-              duration: 0.4,
-              delay: 2.1,
-            }}
-            className="text-foreground font-semibold md:text-base pt-6 pb-4 sm:pb-8"
-          >
-            Explore a collection of academic projects made at Universidade de
-            Aveiro during my bachelor's.
-          </motion.p>
-
-          <Link href="/university">
-            <motion.button
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{
-                type: "spring",
-                duration: 0.6,
-                delay: 2.2,
-              }}
-              whileHover={{
-                backgroundColor: "var(--secondary)",
-                transition: { duration: 0.1, delay: 0 },
-              }}
-              className="bg-variant text-foreground font-semibold p-4 rounded-xl transition-colors duration-300 self-start"
+            <video
+              ref={imageRef}
+              className="absolute inset-0 h-full w-full opacity-0 object-cover"
+              autoPlay
+              loop
+              muted
+              playsInline
             >
-              <h1>Explore</h1>
-            </motion.button>
-          </Link>
-        </AnimatedCard>
+              <source src="/assets/gradient.mp4" type="video/mp4" />
+            </video>
+          </span>
+        </span>{" "}
+        <span className="relative z-50">website!</span>
+      </h1>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{
-            x: isMobile ? "0%" : ["-30%", "-30%", "-30%", "0%"],
-            y: isMobile
-              ? ["-60%", "-60%", "-60%", "0%"]
-              : ["30%", "30%", "30%", "0%"],
-            scale: [1.5, 1, 1, 1],
-            opacity: [1, 1, 1, 1],
-          }}
-          transition={{
-            times: [0, 0.5, 0.5, 0.5, 1],
-            duration: 1.5,
-            delay: 0.4,
-            ease: "easeOut",
-          }}
-          className="bg-terciary col-span-6 md:col-span-3 rounded-2xl"
+      <div
+        ref={buttonsRef}
+        className="flex flex-col md:flex-row md:gap-8 gap-4 opacity-0 relative z-50"
+      >
+        <NavButton
+          variant="solid"
+          onClick={() => (window.location.href = "/about")}
         >
-          <Image
-            src={meImage}
-            alt="Me"
-            priority
-            className="w-full h-full object-cover rounded-2xl"
-          />
-        </motion.div>
+          About me
+        </NavButton>
 
-        <AnimatedCard
-          initial={{ scaleY: 0, originY: 0 }}
-          animate={{ scaleY: 1 }}
-          transition={{
-            type: "spring",
-            duration: 0.3,
-            ease: "easeOut",
-            delay: 1.8,
-          }}
-          className="bg-secondary col-span-6 md:col-span-4 p-4"
+        <NavButton
+          variant="solid"
+          onClick={() => (window.location.href = "/projects")}
         >
-          <div className="flex items-center justify-center h-full">
-            <motion.h1
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 2 }}
-              className="font-sans font-light text-foreground text-lg p-8"
-            >
-              Hello! I'm Diogo Falcão, a 22-year-old Software Engineer from the
-              University of Aveiro. I hold a Bachelor's in Software Engineering
-              and I'm pursuing a Master's in Communication and Web Technologies.
-              I'm passionate about mobile programming. Feel free to explore my
-              website!
-            </motion.h1>
-          </div>
-        </AnimatedCard>
-
-        <DigitalSkills />
+          Projects
+        </NavButton>
       </div>
 
-      <div className="grid h-full grid-rows-2 gap-8 row-span-6 pt-4 md:pt-0">
-        <AnimatedCard
-          initial={{ scaleX: 0, originX: 0 }}
-          animate={{ scaleX: 1 }}
-          transition={{
-            type: "spring",
-            duration: 0.4,
-            ease: "easeOut",
-            delay: 1.8,
-          }}
-          className="bg-secondary row-span-2 p-14 flex flex-col justify-between"
-        >
-          <motion.h1
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ type: "spring", duration: 0.5, delay: 2 }}
-            className="font-sans font-extrabold text-foreground text-3xl sm:text-2xl md:text-3xl lg:text-5xl xl:text-6xl"
-          >
-            My Personal Projects
-          </motion.h1>
+      <FloatingNav
+        className="opacity-0 flex pointer-events-auto"
+        ref={navBarRef}
+      />
 
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ type: "spring", duration: 0.6, delay: 2.3 }}
-            className="text-foreground font-semibold md:text-base pt-6 pb-8"
-          >
-            Here you can find a growing collection of personal projects I've
-            been working on during my free time. It's small right now, but hey,
-            even the best things start in a modest way.
-          </motion.p>
-
-          <Link href="/personal">
-            <motion.button
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ type: "spring", duration: 0.5, delay: 2.1 }}
-              whileHover={{
-                backgroundColor: "var(--primary)",
-                transition: { duration: 0.1, delay: 0 },
-              }}
-              className="bg-surface text-foreground font-semibold p-4 rounded-xl transition-colors duration-300 self-start"
-            >
-              <h1>See More</h1>
-            </motion.button>
-          </Link>
-        </AnimatedCard>
-
-        <AnimatedCard
-          initial={{ scaleX: 0, scaleY: 0, originX: 0, originY: 0 }}
-          animate={{ scaleX: 1, scaleY: 1 }}
-          transition={{
-            type: "spring",
-            duration: 0.3,
-            ease: "easeOut",
-            delay: 1.7,
-          }}
-          className="bg-primary row-span-2 p-6"
-        >
-          <ul className="list-none">
-            <li className="text-foreground font-semibold md:text-base p-8">
-              <div className="flex gap-4 items-center justify-between">
-                <a
-                  href="https://github.com/falcaodiogo"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <button className="bg-variant text-foreground font-semibold p-4 rounded-xl transition-colors duration-300 self-start hover:bg-secondary">
-                    <span className="sm:hidden">Git</span>
-                    <span className="hidden sm:block">GitHub</span>
-                  </button>
-                </a>
-
-                <a
-                  href="https://www.linkedin.com/in/diogofalcao2/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <button className="bg-variant text-foreground font-semibold p-4 rounded-xl transition-colors duration-300 self-start hover:bg-secondary">
-                    <span className="sm:hidden">In</span>
-                    <span className="hidden sm:block">LinkedIn</span>
-                  </button>
-                </a>
-
-                <a
-                  href="mailto:falcao.diogo@ua.pt"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <button className="bg-variant text-foreground font-semibold p-4 rounded-xl transition-colors duration-300 self-start hover:bg-secondary">
-                    <span className="sm:hidden">Mail</span>
-                    <span className="hidden sm:block">Contact</span>
-                  </button>
-                </a>
-              </div>
-            </li>
-          </ul>
-        </AnimatedCard>
-      </div>
+      <h1
+        ref={changeTextRef}
+        className="opacity-0 md:block text-sm text-zinc-300/70 underline z-50 absolute md:top-14 md:right-14 bottom-8 cursor-pointer"
+      >
+        Mudar para a versão antiga
+      </h1>
     </div>
   );
 }
