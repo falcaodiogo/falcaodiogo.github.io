@@ -85,7 +85,7 @@ export default function Skeleton(project: Readonly<Project>) {
   return (
     <div
       ref={containerRef}
-      className="min-h-screen w-full font-league-spartan text-zinc-50 pb-24 bg-cover bg-center bg-fixed bg-no-repeat"
+      className="min-h-screen w-full font-league-spartan bg-black text-zinc-50 pb-24 bg-cover bg-center bg-fixed bg-no-repeat"
       style={{
         backgroundImage: `linear-gradient(to top, rgba(0,0,0,0.4) 0%, rgba(0,0,0,1) 100%), url('/assets/gradient.jpg')`,
       }}

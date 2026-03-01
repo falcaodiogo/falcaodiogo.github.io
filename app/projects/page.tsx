@@ -44,9 +44,14 @@ const SelectionCard = ({
     }
   };
 
+  const alignmentClasses =
+    side === "left"
+      ? "items-end pb-8 md:items-center md:pb-0"
+      : "items-start pt-8 md:items-center md:pt-0";
+
   return (
     <div
-      className="relative flex h-[50vh] w-full flex-1 cursor-pointer items-center justify-center overflow-hidden"
+      className={`relative flex h-[50vh] w-full flex-1 cursor-pointer justify-center overflow-hidden ${alignmentClasses}`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onClick={onSelect}

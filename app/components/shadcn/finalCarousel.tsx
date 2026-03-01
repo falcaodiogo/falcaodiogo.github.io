@@ -1,4 +1,3 @@
-import * as React from "react";
 import Image from "next/image";
 import {
   Carousel,
@@ -31,13 +30,13 @@ export function CarouselSize({ images }: Readonly<CarouselSizeProps>) {
           >
             <div className="p-2">
               <Card className="bg-transparent border-0 shadow-none">
-                <CardContent className="flex items-center justify-center p-0">
+                <CardContent className="flex items-center justify-center p-0 h-64">
                   <Image
                     src={src}
                     alt={`Project screenshot ${index + 1}`}
                     width={500}
                     height={800}
-                    className="w-full h-auto rounded-xl object-contain drop-shadow-lg"
+                    className="w-full rounded-xl object-contain drop-shadow-lg"
                   />
                 </CardContent>
               </Card>
