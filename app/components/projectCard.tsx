@@ -1,6 +1,6 @@
 import Image from "next/image";
 import NavButton from "./button";
-import "material-symbols";
+import AddIcon from "@mui/icons-material/Add";
 
 interface ProjectCardProps {
   title: string;
@@ -33,9 +33,7 @@ export default function ProjectCard({
         <NavButton
           variant="outline"
           onClick={onClick}
-          icon={
-            <span className="material-symbols-outlined align-middle">add</span>
-          }
+          icon={<AddIcon fontSize="small" />}
           className="hidden md:block text-lg px-2 py-1"
         >
           Explore

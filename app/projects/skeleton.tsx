@@ -6,6 +6,7 @@ import NavButton from "../components/button";
 import FloatingNav from "../components/FloatingNav";
 import { CarouselSize } from "../components/shadcn/finalCarousel";
 import { Project } from "../data/projectData";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -100,11 +101,7 @@ export default function Skeleton(project: Readonly<Project>) {
           <div className="flex flex-wrap gap-4 gsap-fade-up">
             <NavButton
               variant="solid"
-              icon={
-                <span className="material-symbols-outlined align-middle">
-                  arrow_back
-                </span>
-              }
+              icon={<ArrowBackIcon className="align-middle" fontSize="small" />}
               onClick={() => window.history.back()}
               className="whitespace-nowrap"
             >

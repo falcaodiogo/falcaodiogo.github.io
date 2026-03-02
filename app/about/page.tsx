@@ -4,7 +4,8 @@ import { useState, useEffect, useRef } from "react";
 import NavButton from "../components/button";
 import FloatingNav from "../components/FloatingNav";
 import Image from "next/image";
-import "material-symbols";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import FileDownloadIcon from "@mui/icons-material/FileDownload";
 
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -214,11 +215,7 @@ export default function About() {
             <NavButton
               variant="solid"
               className="w-auto"
-              icon={
-                <span className="material-symbols-outlined align-middle">
-                  arrow_back
-                </span>
-              }
+              icon={<ArrowBackIcon className="align-middle" fontSize="small" />}
               onClick={() => window.history.back()}
             >
               Go back
@@ -228,9 +225,7 @@ export default function About() {
               variant="solid"
               className="w-auto"
               icon={
-                <span className="material-symbols-outlined align-middle">
-                  download
-                </span>
+                <FileDownloadIcon className="align-middle" fontSize="small" />
               }
               onClick={() => setIsModalOpen(true)}
             >

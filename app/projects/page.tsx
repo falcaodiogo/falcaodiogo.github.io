@@ -6,6 +6,8 @@ import FloatingNav from "../components/FloatingNav";
 import Carousel from "../components/caroussel";
 import { personalProjects, uniProjects } from "../data/projectData";
 import { useRouter } from "next/navigation";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 interface SelectionCardProps {
   title: string;
@@ -219,11 +221,7 @@ export default function Projects() {
           <div className="hidden md:block relative z-10 left-16 pr-16">
             <NavButton
               variant="solid"
-              icon={
-                <span className="material-symbols-outlined align-middle">
-                  arrow_back
-                </span>
-              }
+              icon={<ArrowBackIcon className="align-middle" fontSize="small" />}
               onClick={handleBack}
               className="whitespace-nowrap"
             >
@@ -260,9 +258,7 @@ export default function Projects() {
               variant="solid"
               swap={true}
               icon={
-                <span className="material-symbols-outlined align-middle">
-                  arrow_forward
-                </span>
+                <ArrowForwardIcon className="align-middle" fontSize="small" />
               }
               onClick={handleBack}
               className="whitespace-nowrap"
