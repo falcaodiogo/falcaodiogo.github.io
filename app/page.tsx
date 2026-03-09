@@ -22,7 +22,7 @@ export default function Home() {
         sessionStorage.setItem("hasVisited", "true");
 
         const tl = gsap.timeline({
-          delay: 5,
+          delay: 4,
         });
 
         tl.to(navBarRef.current, {
@@ -188,7 +188,7 @@ export default function Home() {
         // go to /old_website
         onClick={() => (window.location.href = "/old_website")}
       >
-        Mudar para a versão antiga
+        Change to old website
       </h1>
     </div>
   );

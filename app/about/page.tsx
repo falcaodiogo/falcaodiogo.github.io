@@ -12,7 +12,16 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 
 export default function About() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [bgLoaded, setBgLoaded] = useState(false);
   const containerRef = useRef(null);
+
+  useEffect(() => {
+    const img = new window.Image();
+    img.src = "/assets/gradient.jpg";
+    img.onload = () => {
+      setBgLoaded(true);
+    };
+  }, []);
 
   const presentationText =
     "I'm a 22-year-old Software Engineer from the University of Aveiro. I hold a Bachelor's in Software Engineering and I'm pursuing a Master's in Communication and Web Technologies. I'm passionate about mobile/web programming and UX/UI.";
@@ -175,14 +184,20 @@ export default function About() {
   return (
     <div
       ref={containerRef}
-      className="flex flex-col min-h-screen items-center justify-start font-league-spartan bg-black text-zinc-50 gap-48 md:gap-64 overflow-x-hidden w-full py-16 md:py-36"
-      style={{
-        backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0) 50%, #000000 100%), url('/assets/gradient.jpg')`,
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "top center",
-        backgroundSize: "100% 120vh, 100% 120vh",
-      }}
+      className="relative z-0 flex flex-col min-h-screen items-center justify-start font-league-spartan bg-black text-zinc-50 gap-48 md:gap-64 overflow-x-hidden w-full py-16 md:py-36"
     >
+      <div
+        className={`absolute inset-0 -z-10 transition-opacity duration-1000 ease-in-out ${
+          bgLoaded ? "opacity-100" : "opacity-0"
+        }`}
+        style={{
+          backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0) 50%, #000000 100%), url('/assets/gradient.jpg')`,
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "top center",
+          backgroundSize: "100% 120vh, 100% 120vh",
+        }}
+      />
+
       <FloatingNav />
       <div className="hero-section md:py-8 flex flex-col md:flex-row md:justify-around items-center gap-16 md:gap-0 mt-20">
         <div className="flex flex-col gap-4 w-3/4 md:w-1/3">
@@ -262,10 +277,14 @@ export default function About() {
             </h2>
             <div className="flex flex-wrap gap-4 max-w-2xl justify-center md:justify-start">
               {digitalSkills.map((skill) => (
-                <div key={skill} className="digital-skill-btn">
-                  <NavButton variant="solid">{skill}</NavButton>
+                <div
+                  key={skill}
+                  className="digital-skill-btn px-6 py-2.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 shadow-lg text-sm md:text-base font-medium transition-transform hover:scale-105"
+                >
+                  {skill}
                 </div>
               ))}
+
               <div className="digital-skill-btn">
                 <NavButton
                   variant="outline"
@@ -283,8 +302,11 @@ export default function About() {
             </h2>
             <div className="flex flex-wrap gap-4 max-w-2xl justify-center md:justify-start">
               {learningSkills.map((skill) => (
-                <div key={skill} className="learning-skill-btn">
-                  <NavButton variant="outline">{skill}</NavButton>
+                <div
+                  key={skill}
+                  className="learning-skill-btn px-6 py-2.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 shadow-lg text-sm md:text-base font-medium transition-transform hover:scale-105"
+                >
+                  {skill}
                 </div>
               ))}
             </div>

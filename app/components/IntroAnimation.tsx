@@ -51,6 +51,8 @@ export default function IntroAnimation() {
 
       tl.addLabel("start");
 
+      tl.set(wrapper, { autoAlpha: 1 }, "start");
+
       tl.fromTo(
         wrapper,
         { x: -startWidth, gap: "30vw" },
@@ -199,7 +201,7 @@ export default function IntroAnimation() {
     >
       <div
         ref={wrapperRef}
-        className="flex gap-16 shrink-0"
+        className="flex gap-16 shrink-0 invisible"
         style={{ willChange: "transform, gap" }}
       >
         {sequenceIndices.map((imgIndex, i) => (

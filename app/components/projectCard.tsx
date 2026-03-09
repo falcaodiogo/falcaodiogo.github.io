@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import NavButton from "./button";
 import AddIcon from "@mui/icons-material/Add";
@@ -13,18 +16,23 @@ export default function ProjectCard({
   imageSrc,
   onClick,
 }: Readonly<ProjectCardProps>) {
+  const [isLoaded, setIsLoaded] = useState(false);
+
   return (
     <div
       className="flex flex-col font-league-spartan text-base md:text-xl text-zinc-50 font-medium cursor-pointer w-[85vw] max-w-[380px] md:w-[500px] md:max-w-none shrink-0 bg-zinc-900 rounded-2xl"
       onClick={onClick}
     >
-      <div className="relative w-full aspect-video md:aspect-auto md:h-[40vh] overflow-hidden rounded-t-2xl">
+      <div className="relative w-full aspect-video md:aspect-auto md:h-[40vh] overflow-hidden rounded-t-2xl bg-zinc-800">
         <Image
           src={imageSrc}
           alt={title}
           fill
-          className="object-cover"
+          className={`object-cover transition-opacity duration-700 ease-in-out ${
+            isLoaded ? "opacity-100" : "opacity-0"
+          }`}
           sizes="(max-width: 768px) 85vw, 500px"
+          onLoad={() => setIsLoaded(true)}
         />
       </div>
 
