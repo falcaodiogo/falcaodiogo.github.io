@@ -24,7 +24,7 @@ export default function About() {
   }, []);
 
   const presentationText =
-    "I'm a 22-year-old Software Engineer from the University of Aveiro. I hold a Bachelor's in Software Engineering and I'm pursuing a Master's in Communication and Web Technologies. I'm passionate about mobile/web programming and UX/UI.";
+    "I'm a 23-year-old Software Engineer from the University of Aveiro. I hold a Bachelor's in Software Engineering and I'm pursuing a Master's in Communication and Web Technologies. I'm passionate about mobile/web programming and UX/UI. I'm currently on Erasmus. Scroll down to learn more!";
   const presentationWords = presentationText.split(" ");
 
   useEffect(() => {
@@ -71,7 +71,7 @@ export default function About() {
             start: "top 75%",
             once: true,
           },
-        }
+        },
       );
 
       gsap.fromTo(
@@ -88,7 +88,7 @@ export default function About() {
             end: "center center",
             scrub: 1,
           },
-        }
+        },
       );
 
       gsap.from(".skills-title", {
@@ -130,7 +130,7 @@ export default function About() {
               opacity: 1,
               scale: 1,
               ease: "none",
-            }
+            },
           );
         });
       };
@@ -384,7 +384,7 @@ export default function About() {
               onClick={() =>
                 window.open(
                   "https://www.linkedin.com/in/diogofalcao2/",
-                  "_blank"
+                  "_blank",
                 )
               }
               icon={
