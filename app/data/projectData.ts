@@ -162,6 +162,25 @@ export const uniProjects: Project[] = [
     ],
     link: "./projects/uni/CityConnect",
   },
+  {
+    title: "SmartCane - Prototype with sensors for blind people",
+    imageSrc: "/assets/projects/uni/SmartCane/smartcane.png",
+    descriptionBlocks: [
+      "Development of a low-cost, scalable Smart IoT Cane prototype for the Prototyping in the Internet of Things course, applying hardware-software integration to meaningfully enhance daily mobility and safety for seniors and differently-abled individuals.",
+      "Implementation of an end-to-end IoT system utilizing an ESP32 microcontroller to poll multi-sensor telemetry, transmitting real-time states over a Wi-Fi network using the MQTT protocol to a Docker-containerized Eclipse Mosquitto broker.",
+      "Integration of a physical device featuring a modular, hollow-interior PETG enclosure engineered in Autodesk Fusion 360 and 3D-printed via FDM, housing a three-axis IR obstacle array, a floor humidity tracker, a tilt switch, and a directional buzzer feedback module. This project was made with Ammar Shahzad.",
+      "Utilization of a web application built with Next.js, React, TypeScript, and Tailwind CSS under the Bun runtime to supply caregivers with a remote monitoring dashboard, real-time raw JSON payload logs, and an interactive emergency SOS alert system.",
+    ],
+    infoImage: "/assets/projects/uni/SmartCane/arch.png",
+    gitHubLink: "https://github.com/falcaodiogo/PIOT-SoSe26",
+    carouselImages: [
+      "/assets/projects/uni/SmartCane/4.png",
+      "/assets/projects/uni/SmartCane/5.png",
+      "/assets/projects/uni/SmartCane/6.png",
+      "/assets/projects/uni/SmartCane/8.png",
+    ],
+    link: "./projects/uni/SmartCane",
+  },
 ];
 
 export const personalProjects: Project[] = [

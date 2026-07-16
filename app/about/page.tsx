@@ -333,7 +333,7 @@ export default function About() {
             .
           </p>
           <p className="font-medium text-lg text-white">
-            April 1st — September 15th
+            April 1st - September 1st
           </p>
         </div>
 
