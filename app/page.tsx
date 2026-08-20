@@ -137,7 +137,7 @@ export default function Home() {
           my{" "}
         </span>
         <span className="relative inline-block">
-          <span className="relative z-50">brand new</span>
+          <span className="relative z-50">expressive</span>
 
           <span
             ref={containerRef}
@@ -155,7 +155,7 @@ export default function Home() {
             </video>
           </span>
         </span>{" "}
-        <span className="relative z-50">website!</span>
+        <span className="relative z-50">website.</span>
       </h1>
 
       <div
