@@ -71,7 +71,7 @@ export default function Home() {
               duration: 1,
               ease: "power3.out",
             },
-            "<"
+            "<",
           )
           .to(changeTextRef.current, {
             opacity: 1,
@@ -86,7 +86,7 @@ export default function Home() {
             buttonsRef.current,
             changeTextRef.current,
           ],
-          { opacity: 1 }
+          { opacity: 1 },
         );
 
         const tl = gsap.timeline({ delay: 0.3 });
@@ -181,15 +181,6 @@ export default function Home() {
         className="opacity-0 flex pointer-events-auto"
         ref={navBarRef}
       />
-
-      <h1
-        ref={changeTextRef}
-        className="opacity-0 md:block text-sm text-zinc-300/70 underline z-50 absolute md:top-14 md:right-14 bottom-8 cursor-pointer"
-        // go to /old_website
-        onClick={() => (window.location.href = "/old_website")}
-      >
-        Change to old website
-      </h1>
     </div>
   );
 }
