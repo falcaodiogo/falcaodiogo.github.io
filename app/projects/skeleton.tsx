@@ -76,11 +76,11 @@ export default function Skeleton(project: Readonly<Project>) {
               start: "top 80%",
               toggleActions: "play none none none",
             },
-          }
+          },
         );
       });
     },
-    { scope: containerRef }
+    { scope: containerRef },
   );
 
   return (
@@ -129,7 +129,7 @@ export default function Skeleton(project: Readonly<Project>) {
         </div>
 
         {project.carouselImages && project.carouselImages.length > 0 && (
-          <div className="w-full flex justify-center px-14 gsap-fade-up">
+          <div className="w-full flex justify-center px-10 md:px-14 gsap-fade-up">
             <CarouselSize images={project.carouselImages} />
           </div>
         )}

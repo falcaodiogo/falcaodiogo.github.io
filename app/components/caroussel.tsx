@@ -1,44 +1,9 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import { Project } from "../data/projectData";
 import NavButton from "./button";
 import ProjectCard from "./projectCard";
-
-function CarouselArrow({
-  direction,
-  onClick,
-}: Readonly<{
-  direction: "left" | "right";
-  onClick: () => void;
-}>) {
-  const isLeft = direction === "left";
-
-  return (
-    <button
-      onClick={onClick}
-      className={`hidden md:flex absolute ${
-        isLeft ? "left-2 md:left-4" : "right-2 md:right-4"
-      } z-10 items-center justify-center p-3 bg-black/10 text-white rounded-full hover:bg-black/30 focus:outline-none focus:ring-2 focus:ring-white/40 transition-all`}
-      aria-label={`Scroll ${direction}`}
-    >
-      <svg
-        className="w-6 h-6"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-        aria-hidden="true"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d={isLeft ? "M15 19l-7-7 7-7" : "M9 5l7 7-7 7"}
-        />
-      </svg>
-    </button>
-  );
-}
 
 interface CarouselProps {
   items: Project[];
@@ -59,28 +24,72 @@ export default function Carousel({
 
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
-  const scroll = (direction: "left" | "right") => {
-    if (scrollContainerRef.current) {
-      const { current } = scrollContainerRef;
-      const scrollAmount =
-        direction === "left"
-          ? -current.clientWidth / 2
-          : current.clientWidth / 2;
-      current.scrollBy({ left: scrollAmount, behavior: "smooth" });
-    }
-  };
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (!container) return;
+
+    let targetScroll = container.scrollLeft;
+    let animationFrame: number | null = null;
+
+    const smoothScroll = () => {
+      const currentScroll = container.scrollLeft;
+
+      const difference = targetScroll - currentScroll;
+
+      container.scrollLeft += difference * 0.12;
+
+      if (Math.abs(difference) > 0.5) {
+        animationFrame = requestAnimationFrame(smoothScroll);
+      } else {
+        container.scrollLeft = targetScroll;
+        animationFrame = null;
+      }
+    };
+
+    const handleWheel = (e: WheelEvent) => {
+      if (window.innerWidth < 768) return;
+
+      e.preventDefault();
+
+      const multiplier = Math.abs(e.deltaY) > 40 ? 1.5 : 1;
+
+      targetScroll += e.deltaY * multiplier;
+
+      targetScroll = Math.max(
+        0,
+        Math.min(targetScroll, container.scrollWidth - container.clientWidth),
+      );
+
+      if (!animationFrame) {
+        animationFrame = requestAnimationFrame(smoothScroll);
+      }
+    };
+
+    container.addEventListener("wheel", handleWheel, {
+      passive: false,
+    });
+
+    return () => {
+      container.removeEventListener("wheel", handleWheel);
+
+      if (animationFrame) {
+        cancelAnimationFrame(animationFrame);
+      }
+    };
+  }, []);
 
   return (
-    <div className="relative flex flex-col md:flex-row h-full w-full items-center justify-center md:py-12 px-12 group">
-      <CarouselArrow direction="left" onClick={() => scroll("left")} />
-
+    <div className="relative flex h-full w-full items-start md:items-center justify-center py-12 px-4 md:px-12">
       <div
         ref={scrollContainerRef}
-        className="w-full flex items-center overflow-x-auto scroll-smooth no-scrollbar rounded-2xl px-4 md:px-0"
+        className="w-full flex items-start md:items-center overflow-y-auto overflow-x-hidden md:overflow-x-auto md:overflow-y-hidden rounded-2xl pb-4 [scrollbar-width:thin] contain-[layout_paint]"
       >
-        <div className="flex flex-col pt-12 pb-24 md:py-0 md:flex-row w-max h-full items-center gap-10 md:gap-16 bg-linear-to-r from-black from-60% md:to-cyan-900/50 rounded-2xl md:rounded-l-none md:rounded-r-2xl">
+        <div className="flex flex-col pt-12 pb-24 md:py-0 md:flex-row w-full md:w-max h-full items-center gap-10 md:gap-16 bg-linear-to-r from-black from-60% md:to-cyan-900/50 rounded-2xl md:rounded-l-none md:rounded-r-2xl">
           {items.map((project) => (
-            <div key={project.title} className="shrink-0 snap-center">
+            <div
+              key={project.title}
+              className="shrink-0 snap-center pointer-events-auto"
+            >
               <ProjectCard
                 title={project.title}
                 imageSrc={project.imageSrc}
@@ -96,11 +105,15 @@ export default function Carousel({
             <NavButton
               variant="solid"
               onClick={() => {
+                window.scrollTo({
+                  top: 0,
+                  behavior: "smooth",
+                });
+
                 if (scrollContainerRef.current) {
                   scrollContainerRef.current.scrollTo({
                     left: 0,
                     top: 0,
-                    behavior: "smooth",
                   });
                 }
                 handleBack();
@@ -111,8 +124,6 @@ export default function Carousel({
           </div>
         </div>
       </div>
-
-      <CarouselArrow direction="right" onClick={() => scroll("right")} />
     </div>
   );
 }
