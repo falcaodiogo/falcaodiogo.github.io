@@ -12,6 +12,10 @@ export function useAboutAnimations(
     gsap.registerPlugin(ScrollTrigger);
 
     const ctx = gsap.context(() => {
+      if (containerRef.current) {
+        gsap.set(containerRef.current, { autoAlpha: 1 });
+      }
+
       gsap.from(".hero-element", {
         y: 60,
         opacity: 0,

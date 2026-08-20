@@ -12,17 +12,17 @@ export default function Home() {
   const textRef = useRef<HTMLHeadingElement>(null);
   const navBarRef = useRef<HTMLDivElement>(null);
   const buttonsRef = useRef<HTMLDivElement>(null);
-  const changeTextRef = useRef<HTMLHeadingElement>(null);
 
   useLayoutEffect(() => {
     const hasVisited = sessionStorage.getItem("hasVisited");
 
     const ctx = gsap.context(() => {
       if (!hasVisited) {
-        sessionStorage.setItem("hasVisited", "true");
-
         const tl = gsap.timeline({
           delay: 4,
+          onComplete: () => {
+            sessionStorage.setItem("hasVisited", "true");
+          },
         });
 
         tl.to(navBarRef.current, {
@@ -72,22 +72,11 @@ export default function Home() {
               ease: "power3.out",
             },
             "<",
-          )
-          .to(changeTextRef.current, {
-            opacity: 1,
-            duration: 1.5,
-            ease: "power3.out",
-          });
+          );
       } else {
-        gsap.set(
-          [
-            navBarRef.current,
-            textRef.current,
-            buttonsRef.current,
-            changeTextRef.current,
-          ],
-          { opacity: 1 },
-        );
+        gsap.set([navBarRef.current, textRef.current, buttonsRef.current], {
+          opacity: 1,
+        });
 
         const tl = gsap.timeline({ delay: 0.3 });
 
@@ -155,7 +144,7 @@ export default function Home() {
             </video>
           </span>
         </span>{" "}
-        <span className="relative z-50">website.</span>
+        <span className="relative z-50">website!</span>
       </h1>
 
       <div

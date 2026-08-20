@@ -37,7 +37,7 @@ export default function About() {
   return (
     <div
       ref={containerRef}
-      className="relative z-0 flex flex-col min-h-screen items-center justify-start font-league-spartan bg-black text-zinc-50 gap-48 md:gap-64 overflow-x-hidden w-full py-16 md:py-36"
+      className="invisible relative z-0 flex flex-col min-h-screen items-center justify-start font-league-spartan bg-black text-zinc-50 gap-48 md:gap-64 overflow-x-hidden w-full py-16 md:py-36"
     >
       <div
         className={`absolute inset-0 -z-10 transition-opacity duration-1000 ease-in-out ${
