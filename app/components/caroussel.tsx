@@ -71,7 +71,7 @@ export default function Carousel({
   };
 
   return (
-    <div className="relative flex flex-col md:flex-row h-full w-full items-center justify-center py-12 px-12 md:py-0 group">
+    <div className="relative flex flex-col md:flex-row h-full w-full items-center justify-center md:py-12 px-12 group">
       <CarouselArrow direction="left" onClick={() => scroll("left")} />
 
       <div

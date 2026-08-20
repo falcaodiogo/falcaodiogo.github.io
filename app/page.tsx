@@ -33,12 +33,12 @@ export default function Home() {
 
         tl.to(textRef.current, {
           opacity: 1,
-          duration: 1,
+          duration: 0.8,
           ease: "power3.out",
         })
           .to(imageRef.current, {
             opacity: 1,
-            duration: 0.8,
+            duration: 0.6,
             ease: "power2.inOut",
           })
           .add(() => {
@@ -66,16 +66,16 @@ export default function Home() {
           .to(
             buttonsRef.current,
             {
-              delay: 0.8,
+              delay: 0.6,
               opacity: 1,
-              duration: 1,
+              duration: 0.8,
               ease: "power3.out",
             },
             "<",
           )
           .to(changeTextRef.current, {
             opacity: 1,
-            duration: 2,
+            duration: 1.5,
             ease: "power3.out",
           });
       } else {

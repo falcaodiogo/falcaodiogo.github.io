@@ -62,21 +62,21 @@ export default function IntroAnimation() {
           duration: 2,
           ease: "power2.inOut",
         },
-        "start"
+        "start",
       );
 
       tl.fromTo(
         children[1],
         { x: -50 },
         { x: 0, duration: 2, ease: "power2.inOut", delay: 0.2 },
-        "start"
+        "start",
       );
 
       tl.fromTo(
         children[0],
         { x: -150 },
         { x: 0, duration: 2, ease: "power2.inOut", delay: 0.5 },
-        "start"
+        "start",
       );
 
       const leftChildren = [children[0], children[1]];
@@ -94,7 +94,7 @@ export default function IntroAnimation() {
             duration: 1,
             ease: "power2.in",
           },
-          "split"
+          "split",
         );
 
         tl.to(
@@ -111,7 +111,7 @@ export default function IntroAnimation() {
             ],
             duration: 1.5,
           },
-          "split"
+          "split",
         );
       });
 
@@ -122,7 +122,7 @@ export default function IntroAnimation() {
           duration: 1.5,
           ease: "power2.inOut",
         },
-        "split"
+        "split",
       );
 
       if (blackBox) {
@@ -142,7 +142,7 @@ export default function IntroAnimation() {
             duration: 2,
             ease: "power4.inOut",
           },
-          "split"
+          "split",
         );
       }
 
@@ -158,7 +158,7 @@ export default function IntroAnimation() {
             duration: 1,
             ease: "power2.in",
           },
-          "split"
+          "split",
         );
 
         tl.to(
@@ -175,7 +175,7 @@ export default function IntroAnimation() {
             ],
             duration: 1.5,
           },
-          "split"
+          "split",
         );
       });
 
