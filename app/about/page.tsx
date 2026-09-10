@@ -54,7 +54,7 @@ export default function About() {
       <FloatingNav />
       <HeroSection setIsModalOpen={setIsModalOpen} />
       <SkillsSection />
-      <ErasmusSection />
+      {/* <ErasmusSection /> had to comment out :( */}
       <ContactsSection />
 
       {isModalOpen && (

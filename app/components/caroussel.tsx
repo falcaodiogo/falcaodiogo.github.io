@@ -51,9 +51,12 @@ export default function Carousel({
 
       e.preventDefault();
 
-      const multiplier = Math.abs(e.deltaY) > 40 ? 1.5 : 1;
+      const delta =
+        Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
 
-      targetScroll += e.deltaY * multiplier;
+      const multiplier = Math.abs(delta) > 40 ? 1.5 : 1;
+
+      targetScroll += delta * multiplier;
 
       targetScroll = Math.max(
         0,

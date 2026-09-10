@@ -166,7 +166,7 @@ export const uniProjects: Project[] = [
     title: "SmartCane - Prototype with sensors for blind people",
     imageSrc: "/assets/projects/uni/SmartCane/smartcane.png",
     descriptionBlocks: [
-      "Development of a low-cost, scalable Smart IoT Cane prototype for the Prototyping in the Internet of Things course, applying hardware-software integration to meaningfully enhance daily mobility and safety for seniors and differently-abled individuals.",
+      "Development of a low-cost, scalable Smart IoT Cane prototype for the Prototyping in the Internet of Things course in the University of Siegen, Germany, applying hardware-software integration to meaningfully enhance daily mobility and safety for seniors and differently-abled individuals.",
       "Implementation of an end-to-end IoT system utilizing an ESP32 microcontroller to poll multi-sensor telemetry, transmitting real-time states over a Wi-Fi network using the MQTT protocol to a Docker-containerized Eclipse Mosquitto broker.",
       "Integration of a physical device featuring a modular, hollow-interior PETG enclosure engineered in Autodesk Fusion 360 and 3D-printed via FDM, housing a three-axis IR obstacle array, a floor humidity tracker, a tilt switch, and a directional buzzer feedback module. This project was made with Ammar Shahzad.",
       "Utilization of a web application built with Next.js, React, TypeScript, and Tailwind CSS under the Bun runtime to supply caregivers with a remote monitoring dashboard, real-time raw JSON payload logs, and an interactive emergency SOS alert system.",
@@ -180,6 +180,24 @@ export const uniProjects: Project[] = [
       "/assets/projects/uni/SmartCane/8.png",
     ],
     link: "./projects/uni/SmartCane",
+  },
+  {
+    title: "VR-Prototyping - First aid for road accidents",
+    imageSrc: "/assets/projects/uni/VR/VR.png",
+    descriptionBlocks: [
+      "Development of a VR application for the Prototyping in Virtual Reality course in the University of Siegen, Germany, simulating a first aid scenario for road accidents.",
+      "Implementation of a VR environment where users can practice first aid procedures in a realistic and immersive setting.",
+      "The first implemented scenario was a bandage application to a bleeding wound, with the user having circle the arm with the bandage and then apply it to the wound.",
+      "The second implemented scenario was a CPR procedure, where the user had to perform chest compressions and rescue breaths on a virtual patient.",
+    ],
+    infoImage: "/assets/projects/uni/VR/VR.png",
+    gitHubLink: "https://github.com/falcaodiogo/VR-Prototyping-SoSe26",
+    carouselImages: [
+      "/assets/projects/uni/VR/14.png",
+      "/assets/projects/uni/VR/15.png",
+      "/assets/projects/uni/VR/16.png",
+    ],
+    link: "./projects/uni/VR",
   },
 ];
 
@@ -203,6 +221,25 @@ export const personalProjects: Project[] = [
       "/assets/projects/mine/CP/5.png",
     ],
     link: "./projects/mine/CP",
+  },
+  {
+    title: "Saudade - Interactive map of places and people of Erasmus+",
+    imageSrc: "/assets/projects/mine/saudade/saudade.png",
+    descriptionBlocks: [
+      "Development of an interactive map to visualize the locations and people involved in my Erasmus+ program in Siegen, Germany.",
+      "Focused on design and feel, with strong gradients and haptic vibrations troughout the app. The map is interactive, allowing users to explore different locations and learn about the experiences of Erasmus+ participants.",
+    ],
+    gitHubLink: "https://github.com/falcaodiogo/AD-SoSe26",
+    infoImage: "/assets/projects/mine/saudade/9.png",
+    carouselImages: [
+      "/assets/projects/mine/saudade/saudade.png",
+      "/assets/projects/mine/saudade/8.png",
+      "/assets/projects/mine/saudade/9.png",
+      "/assets/projects/mine/saudade/10.png",
+      "/assets/projects/mine/saudade/11.png",
+      "/assets/projects/mine/saudade/12.png",
+    ],
+    link: "./projects/mine/saudade",
   },
   {
     title: "Portfolio - Previous version of my personal portfolio website",

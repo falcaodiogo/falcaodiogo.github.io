@@ -1,9 +1,9 @@
 "use client";
 
 import Skeleton from "../../skeleton";
-import { personalProjects, Project } from "../../../data/projectData";
+import { uniProjects, Project } from "../../../data/projectData";
 
 export default function CityConnect() {
-  const project: Project = personalProjects[2];
+  const project: Project = uniProjects[9];
   return <Skeleton {...project} />;
 }
