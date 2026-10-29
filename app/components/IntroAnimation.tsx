@@ -179,6 +179,9 @@ export default function IntroAnimation() {
         );
       });
 
+      tl.to(children.slice(5), { autoAlpha: 0, duration: 0.4 }, "split");
+
+
       tl.to(containerRef.current, {
         opacity: 0,
         duration: 0.8,
@@ -207,9 +210,8 @@ export default function IntroAnimation() {
         {sequenceIndices.map((imgIndex, i) => (
           <div
             key={`${imgIndex}-${i}`}
-            className={`relative w-48 h-32 md:w-64 md:h-48 shrink-0 ${
-              i === 2 ? "overflow-visible" : ""
-            }`}
+            className={`relative w-48 h-32 md:w-64 md:h-48 shrink-0 ${i === 2 ? "overflow-visible" : ""
+              }`}
           >
             {i === 2 && (
               <div
